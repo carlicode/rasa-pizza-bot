@@ -1,0 +1,23 @@
+version: "2.0"
+
+stories:
+- story: ask for a pizza happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: action_pizza_true
+  - slot_was_set:
+    - pizza_confirm: true
+  - action: pizza_form
+  - active_loop: pizza_form
+  - action: utter_pizza_num
+  - slot_was_set:
+     - pizza_num
+  - action: utter_pizza_flavor
+  - slot_was_set:
+     - pizza_flavor
+  - action: utter_address
+  - slot_was_set:
+    - address
+  - action: utter_bye
+  - active_loop: null
