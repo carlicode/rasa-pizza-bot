@@ -46,7 +46,8 @@ forms:
 actions:
 - validate_pizza_form
 - action_pizza_true
-- utter_bye
+- utter_goodbye
+- utter_greet
 - bye
 
 session_config:
