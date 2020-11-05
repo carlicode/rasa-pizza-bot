@@ -1,37 +1,36 @@
 version: "2.0"
-
 rules:
+ - rule: activate pizza form
+   steps:
+   - intent: order pizza
+   - action: pizza_form
+   - active_loop: pizza_form
 
-- rule: Say hello anytime the user says hello
-  steps:
-  - intent: greet
-  - action: utter_greet
+ - rule: Say hello anytime the user says hello
+   steps:
+    - intent: greet
+    - action: utter_greet
 
-- rule: Say goodbye anytime the user says goodbye
-  steps:
-  - intent: goodbye
-  - action: utter_goodbye
+ - rule: user say yes to order
+   steps:
+    - intent: affirm
+    - action: utter_pizza_num
 
-- rule: Say 'I am a bot' anytime the user challenges
-  steps:
-  - intent: bot_challenge
-  - action: utter_iamabot
+ - rule: Say hello anytime the user says hello
+   steps:
+    - intent: greet
+    - action: utter_greet
 
-- rule: Activate form
-  steps:
-  - intent: order_pizza
-  - action: pizza_form
-  - active_loop: pizza_form
+ - rule: submit form
+   condition:
+   - active_loop: pizza_form
 
-- rule: Submit form
-  condition:
-  # Condition that form is active.
-  - active_loop: pizza_form
-  steps:
-  # Form is deactivated
-  - action: pizza_form
-  - active_loop: null
-  - slot_was_set:
-    - requested_slot: null
-  # The actions we want to run when the form is submitted.
-  - action: bye
+   steps:
+   - action: pizza_form
+   - active_loop: null
+   - action: utter_goodbye
+
+ - rule: Say bye anytime the user says bye
+   steps:
+    - intent: goodbye
+    - action: utter_goodbye

@@ -9,8 +9,16 @@ intents:
   - order_pizza
   - bot_challenge
 
-entities:
-  - flavor
+slots:
+  pizza_num:
+    type: unfeaturized
+    influence_conversation: false
+  pizza_flavor:
+    type: unfeaturized
+    influence_conversation: false
+  address:
+    type: unfeaturized
+    influence_conversation: false
 
 responses:
   utter_greet:
@@ -31,24 +39,25 @@ responses:
   utter_iamabot:
   - text: "I am a bot, powered by Rasa."
 
+actions:
+- validate_pizza_form
+- action_pizza_true
+- utter_greet
+- utter_pizza_num
+- utter_pizza_flavor
+- utter_goodbye
+- utter_iamabot
+
 forms:
   pizza_form:
-    pizza_confirm:
-    - type: from_text
     pizza_num:
     - type: number
     pizza_flavor:
     - type: from_entity
       entity: flavor
-    adress:
+    address:
     - type: from_text
 
-actions:
-- validate_pizza_form
-- action_pizza_true
-- utter_goodbye
-- utter_greet
-- bye
 
 session_config:
   session_expiration_time: 60

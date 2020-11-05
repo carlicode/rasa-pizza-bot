@@ -1,0 +1,9 @@
+forms:
+  pizza_form:
+    pizza_num:
+    - type: number
+    pizza_flavor:
+    - type: from_entity
+      entity: flavor
+    address:
+    - type: from_text
