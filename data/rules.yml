@@ -14,7 +14,22 @@ rules:
  - rule: user say yes to order
    steps:
     - intent: affirm
-    - action: utter_pizza_num
+    - action: utter_pizza_slices
+
+ - rule: slices response
+   steps:
+    - intent: slices
+    - action: utter_pizza_flavor
+
+ - rule: slices response
+   steps:
+    - intent: address
+    - action: utter_goodbye
+
+ - rule: flavor response
+   steps:
+    - intent: flavor
+    - action: utter_ask_address
 
  - rule: Say hello anytime the user says hello
    steps:

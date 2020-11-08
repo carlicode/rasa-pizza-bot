@@ -15,16 +15,6 @@ nlu:
     - hey dude
     - goodmorning
     - goodevening
-    - good afternoon
-
-- intent: goodbye
-  examples: |
-    - good afternoon
-    - cu
-    - good by
-    - cee you later
-    - good night
-    - bye
     - goodbye
     - have a nice day
     - see you around
@@ -51,20 +41,14 @@ nlu:
     - no way
     - not really
 
-- intent: mood_great
+- intent: goodbye
   examples: |
-    - perfect
-    - great
-    - amazing
-    - feeling like a king
-    - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
-    - super stoked
-    - extremely good
-    - so so perfect
+    - good afternoon
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
     - so good
     - so perfect
 
@@ -78,14 +62,35 @@ nlu:
     - what pizza flavors do you have?
     - I need pizza
 
-- intent: order_one_pizza
+- intent: address
   examples: |
-    - I want a single pizza
-    - I want one single pizza
-    - One single pizza
-    - One single pizza please
-    - Just a pizza
+    - My adress is example Av number 88
+    - Example Av number 88
+    - Example Av number 88 please
+    - Address is example Av number 88
+    - Address is example Av number 88
 
+
+- intent: slices
+  examples: |
+    - 6 slices please
+    - 8 slices please
+    - 10 slices please
+    - 6
+    - 8
+    - 10
+    - 6 please
+    - 8 please
+    - 10 please
+
+- intent: flavor
+  examples: |
+    - hawaiian
+    - Bacon
+    - Margarita
+    - hawaiian please
+    - Bacon please
+    - Margarita please
 
 - intent: bot_challenge
   examples: |

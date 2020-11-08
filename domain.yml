@@ -5,18 +5,20 @@ intents:
   - goodbye
   - affirm
   - deny
-  - mood_great
   - order_pizza
+  - address
+  - slices
+  - flavor
   - bot_challenge
 
 slots:
-  pizza_num:
+  pizza_slices:
     type: unfeaturized
     influence_conversation: false
   pizza_flavor:
     type: unfeaturized
     influence_conversation: false
-  address:
+  pizza_address:
     type: unfeaturized
     influence_conversation: false
 
@@ -24,38 +26,37 @@ responses:
   utter_greet:
   - text: "Hey! Do you want to order pizza?"
 
-  utter_pizza_num:
-  - text: "How many pizzas do you like to order?"
+  utter_pizza_slices:
+  - text: "How many slices do you like to order? - 6 - 8 - 10"
 
   utter_pizza_flavor:
-  - text: "What flavor do you like?"
+  - text: "What flavor do you like? - Hawaiian - Bacon - Margarita"
 
-  utter_address:
+  utter_ask_address:
   - text: "What is your address?"
 
   utter_goodbye:
-  - text: "You can pick up the order in 30 minutes, see you!"
+  - text:  "See you in 45 minutes at your {pizza_address}"
 
-  utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
 
 actions:
 - validate_pizza_form
 - action_pizza_true
 - utter_greet
-- utter_pizza_num
+- utter_pizza_slices
 - utter_pizza_flavor
 - utter_goodbye
 - utter_iamabot
+- utter_ask_address
 
 forms:
   pizza_form:
-    pizza_num:
+    pizza_slices:
     - type: number
     pizza_flavor:
     - type: from_entity
       entity: flavor
-    address:
+    pizza_address:
     - type: from_text
 
 
