@@ -2,17 +2,16 @@ responses:
    utter_greet:
        - text: |
            Hello! Do you want to order pizza??
-       - text: |
-           Hi!
-   utter_pizza_num:
+
+   utter_pizza_slices:
     - text: |
-           How many pizzas do you like to order?
+           How many slices do you like to order? - 6 - 8 - 10
    utter_pizza_flavor:
        - text: |
-           What flavor do you like?
+           What flavor do you like? - Hawaiian - Bacon - Margarita
    utter_ask_address:
        - text: |
            What is your address?
    utter_goodbye:
        - text: |
-           WYou can pick up the order in 30 minutes, see you!
+           See you in 45 minutes at your {address}, thank you!!
